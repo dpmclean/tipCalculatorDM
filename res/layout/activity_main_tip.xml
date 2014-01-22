@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainTip" >
+
+    <Button
+        android:id="@+id/btnFifteen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="driveTipFifteen"
+        android:text="@string/btnFifteen" />
+
+    <Button
+        android:id="@+id/btnTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnFifteen"
+        android:layout_alignBottom="@+id/btnFifteen"
+        android:layout_marginRight="22dp"
+        android:onClick="driveTipTen"
+        android:layout_toLeftOf="@+id/btnFifteen"
+        android:text="@string/btnTen" />
+
+    <Button
+        android:id="@+id/btnTwenty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnFifteen"
+        android:layout_alignBottom="@+id/btnFifteen"
+        android:layout_marginLeft="22dp"
+        android:onClick="driveTipTwenty"
+        android:layout_toRightOf="@+id/btnFifteen"
+        android:text="@string/btnTwenty" />
+
+    <TextView
+        android:id="@+id/txtOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"
+        android:hint="@string/result_place_holder"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/etBillEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="@string/prompt_entry"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>
