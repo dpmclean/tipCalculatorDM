@@ -29,34 +29,32 @@ public class MainTip extends Activity {
 		return true;
 	}
 
+	private void driveTipDisplay() {
+		//try {
+		textInBill = (EditText) findViewById(R.id.etBillEntry);
+		//}
+		//catch( IllegalStateException ) {
+		//	tvResult.setText( "That bill subtotal just dudnt look right");
+		//}
+		String strBill = textInBill.getText().toString();
+		billSubTot = Double.parseDouble(strBill);
+		 // avoid output looking like crap ... or not money anyhow; always have .XX
+		DecimalFormat df = new DecimalFormat("#####.00");
+		tvResult.setText( "Tip is:   $" + df.format( billSubTot * percent ) );
+		//tvResult.setText( "$" + Double.toString( billSubTot * percent ) ); // truncates 0 digits		
+	}
+
+	// begin different button onClick targets
 	public void driveTipTen(View v) {
-		textInBill = (EditText) findViewById(R.id.etBillEntry);
 		percent = .1;
-		String strBill = textInBill.getText().toString();
-		billSubTot = Double.parseDouble(strBill);
-		DecimalFormat df = new DecimalFormat("#####.00");
-		tvResult.setText( "Tip is:   $" + df.format( billSubTot * percent ) );
-		//tvResult.setText( "$" + Double.toString( billSubTot * percent ) ); // truncates 0 digits
+		driveTipDisplay();
 	}
-
 	public void driveTipFifteen(View v) {
-		textInBill = (EditText) findViewById(R.id.etBillEntry);
 		percent = .15;
-		String strBill = textInBill.getText().toString();
-		billSubTot = Double.parseDouble(strBill);
-		DecimalFormat df = new DecimalFormat("#####.00");
-		tvResult.setText( "Tip is:   $" + df.format( billSubTot * percent ) );
-		//tvResult.setText( "$" + Double.toString( billSubTot * percent ) ); // truncates 0 digits
+		driveTipDisplay();
 	}
-
 	public void driveTipTwenty(View v) {
-		textInBill = (EditText) findViewById(R.id.etBillEntry);
 		percent = .2;
-		String strBill = textInBill.getText().toString();
-		billSubTot = Double.parseDouble(strBill);
-		DecimalFormat df = new DecimalFormat("#####.00");
-		tvResult.setText( "Tip is:   $" + df.format( billSubTot * percent ) );
-		//tvResult.setText( "$" + Double.toString( billSubTot * percent ) ); // truncates 0 digits
+		driveTipDisplay();
 	}
-
 }
